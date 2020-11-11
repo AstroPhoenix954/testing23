@@ -1,0 +1,108 @@
+<!-- /*<?php
+session_start();
+
+require_once 'database/dbconfig.php';
+
+//Session check
+if($_SESSION['email'])
+{
+header("location:profile/profile.php");
+}
+
+if(isset($_POST['login']))
+{
+
+$uname=$_POST['uname'];
+$pass=$_POST['upass'];
+
+if($user->login($uname,$pass))
+{
+	
+//echo "Login Done..!";
+header("location:profile/profile.php");
+$_SESSION['email']=$uname;
+	
+}
+else
+{
+echo '<script type="text/javascript">alert("Wrong Details")</script>';
+}
+}
+
+?>
+ -->
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="pop.css">
+	<style type="text/css">
+		.col{
+			    color: #1c1c1c;
+		}
+	</style>
+	
+</head>
+<body>
+
+<div class="container-fluid">
+<div class="row">
+
+<!-- col 1 -->
+<div class="col-md-6">
+	
+	<!-- login form -->
+	<div  id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+
+    	  <div class="modal-dialog" style="margin: 150px auto;">
+    	  <p class="text-center" style="font-size: -webkit-xxx-large;color: #0a0a0a">Type one</p>
+				<div class="loginmodal-container" style="background: url(binding_dark.png)repeat fixed;;color: white;">
+					<h1>Login to Your Account</h1><br>
+				  <form method="post">
+					<input type="text" name="uname" placeholder="Username" autocomplete="off" required>
+					<input type="password" name="upass" placeholder="Password" autocomplete="off" required>
+					<input type="submit" name="login" class="login loginmodal-submit" value="Login" style="background-color:#F44336;">
+				  </form>
+					
+				  <div class="login-help text-center">
+					<span ><strong class="" ><a href="index.php" style="color: white;opacity: 1;">Any Text Here</a></strong></span>
+				  </div>
+				</div>
+			</div>
+		  </div>
+
+</div>
+	
+<!-- col 2 -->
+<div class="col-md-6" style="background: url(binding_dark.png)repeat fixed;">
+	
+	<!-- login form -->
+	<div  id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+    	  <div class="modal-dialog" style="margin: 150px auto;">
+    	   <p class="text-center" style="font-size: -webkit-xxx-large;color: white">Type Two</p>
+				<div class="loginmodal-container" style="background: #00a885;color: white;">
+					<h1 class="col">Login to Your Account</h1><br>
+				  <form method="post">
+					<input type="text" name="uname" placeholder="Username" autocomplete="off" required>
+					<input type="password" name="upass" placeholder="Password" autocomplete="off" required>
+					<input type="submit" name="login" class="login loginmodal-submit" value="Login" style="background-color:#F44336;">
+				  </form>
+					
+				  <div class="login-help text-center">
+					<span ><strong class="" ><a href="index.php" class="col" style="color: white;opacity: 1;">Any Text Here</a></strong></span>
+				  </div>
+				</div>
+			</div>
+		  </div>
+</div>
+
+</div>
+	
+</div>
+
+
+
+</body>
+</html>
+
